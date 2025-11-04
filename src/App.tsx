@@ -1,7 +1,9 @@
+import Text from "./components/text";
+
 export default function App() {
   return (
-    <div className="text-red-700">
-      Hello, world!     
-    </div>
+    <Text variant={"body-md"}>
+      Hello, world!
+    </Text>
   )
 }
