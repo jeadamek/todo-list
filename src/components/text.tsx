@@ -27,6 +27,7 @@ export default function Text({as = "span", variant, className, children, ...prop
     {
       className: textVariants({variant, className}),
       ...props
-    }
+    },
+    children
   )
 }
