@@ -7,10 +7,11 @@ import SpinnerIcon from './assets/icons/spinner.svg?react';
 import Icon from "./components/icon";
 import Badge from "./components/badge";
 import Button from "./components/button";
+import InputText from "./components/Input-text";
 
 export default function App() {
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-10">
       <div className="flex flex-col gap-1">
         <Text variant={"body-md"}>
           Hello, world!
@@ -34,6 +35,10 @@ export default function App() {
         <Button icon={PlusIcon}>
           Nova Tarefa
         </Button>
+      </div>
+
+      <div>
+        <InputText />
       </div>
     </div>
   )
