@@ -8,6 +8,7 @@ import Icon from "./components/icon";
 import Badge from "./components/badge";
 import Button from "./components/button";
 import InputText from "./components/Input-text";
+import InputCheckbox from "./components/input-checkbox";
 
 export default function App() {
   return (
@@ -39,6 +40,10 @@ export default function App() {
 
       <div>
         <InputText />
+      </div>
+
+      <div>
+        <InputCheckbox />
       </div>
     </div>
   )
