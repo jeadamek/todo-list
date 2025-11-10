@@ -9,6 +9,7 @@ import Badge from "./components/badge";
 import Button from "./components/button";
 import InputText from "./components/Input-text";
 import InputCheckbox from "./components/input-checkbox";
+import Card from "./components/card";
 
 export default function App() {
   return (
@@ -44,6 +45,10 @@ export default function App() {
 
       <div>
         <InputCheckbox />
+      </div>
+
+      <div>
+        <Card size={"md"}> Hello World</Card>
       </div>
     </div>
   )
