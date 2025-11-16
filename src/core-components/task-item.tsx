@@ -9,9 +9,17 @@ import XIcon from "../assets/icons/x.svg?react";
 import CheckIcon from "../assets/icons/check.svg?react";
 import { useState } from "react";
 import InputText from "../components/Input-text";
+import { Task, TaskState } from "../models/task";
+import { cx } from "class-variance-authority";
 
-export default function TaskItem() {
-  const [isEditing, setIsEditing] = useState(false);
+interface TaskItemProps {
+  task: Task;
+}
+
+export default function TaskItem({ task }: TaskItemProps) {
+  const [isEditing, setIsEditing] = useState(
+    task?.state === TaskState.Creating
+  );
 
   function handleEditTask() {
     setIsEditing(true);
@@ -25,8 +33,17 @@ export default function TaskItem() {
     <Card size={"md"} className="flex items-center gap-4">
       {!isEditing ? (
         <>
-          <InputCheckbox />
-          <Text className="flex-1">Fazer compras da semana</Text>
+          <InputCheckbox
+            value={task?.completed?.toString()}
+            checked={task.completed}
+          />
+          <Text
+            className={cx("flex-1", {
+              "line-through": task?.completed,
+            })}
+          >
+            {task?.title}
+          </Text>
           <div className="flex gap-1">
             <ButtonIcon icon={TrashIcon} variant={"tertiary"} />
             <ButtonIcon
